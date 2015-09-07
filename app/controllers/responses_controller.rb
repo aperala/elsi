@@ -12,8 +12,6 @@ class ResponsesController < ApplicationController
     redirect_to passage_path(@response.passage)
   end
 
-
-
   private
     def response_params
       params.require(:response).permit(:body, :passage_id, :user_id)

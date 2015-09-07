@@ -18,8 +18,13 @@ class PassagesController < ApplicationController
   end
 
   def create
-    @passage = @current_user.passages.create(passage_params)
-    redirect_to passages_path
+    @passage = @current_user.passages.build(passage_params)
+    if @passage.valid?
+      @passage.save
+      redirect_to passages_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -27,7 +32,7 @@ class PassagesController < ApplicationController
 
   def update
     if @passage.update(passage_params) 
-      redirect_to @passage
+      redirect_to @passages
     else
       render 'edit'
     end

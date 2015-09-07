@@ -15,14 +15,11 @@
 
 <fieldset>
   <%= form_for Response.new do |f| %>
+    <%= f.hidden_field :passage_id, value: @passage.id %>
+    <%= f.hidden_field :user_id, value: @current_user.id %>
+    <%= f.text_area :body %>
     <p>
-      <%= f.label :text %>
-      <%= f.hidden_field :passage_id, value: @passage.id %>
-      <%= f.hidden_field :user_id, value: @current_user.id %>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit %>
+      <%= f.submit :post %>
     </p>
   <% end %>
 </fieldset>
