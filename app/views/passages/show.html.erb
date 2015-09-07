@@ -1,0 +1,9 @@
+<article>
+  <h1><%= @passage.title %> </h1>  
+  <h3><%= @passage.author %> </h3>
+  <p><%= @passage.body %> </p>
+  <p>
+    <%= link_to "#{@passage.link}", @passage.link, target: "_blank" %>
+    <%= @passage.created_at.to_s(:short) %>
+  </p>
+</article>
