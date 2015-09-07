@@ -10,3 +10,32 @@
 </article>
 
 <%= link_to "Edit this entry", edit_passage_path(@passage)  %>
+
+<h3>Add a response:</h3>
+
+<fieldset>
+  <%= form_for Response.new do |f| %>
+    <p>
+      <%= f.label :text %>
+      <%= f.hidden_field :passage_id, value: @passage.id %>
+      <%= f.hidden_field :user_id, value: @current_user.id %>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</fieldset>
+
+<div class="responses">
+  <% @passage.responses.order(id: :asc).each do |response| %>
+    <p class="response">
+      <%= response.body %>
+    </p>
+    <p class="date">
+      at <%= response.created_at.to_s(:short) %></span>
+    </p>
+    <hr>
+  <% end %>
+
+</div>
