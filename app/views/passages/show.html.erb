@@ -5,6 +5,7 @@
   <p>
     <%= link_to "#{@passage.link}", @passage.link, target: "_blank" %>
     <%= @passage.created_at.to_s(:short) %>
+    Tags: <%= @passage.tag_list %>
   </p>
 </article>
 

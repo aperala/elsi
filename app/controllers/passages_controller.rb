@@ -3,7 +3,11 @@ class PassagesController < ApplicationController
   before_action :find_passage, only: [:show, :edit, :update, :destroy]
 
   def index
-    @passages = Passage.all
+    if params[:tag]
+      @passages = @current_user.passages.tagged_with(params[:tag])
+    else
+      @passages = @current_user.passages.all
+    end
   end
 
   def show
@@ -14,7 +18,7 @@ class PassagesController < ApplicationController
   end
 
   def create
-    @passage = Passage.create(passage_params)
+    @passage = @current_user.passages.create(passage_params)
     redirect_to passages_path
   end
 
@@ -40,7 +44,7 @@ class PassagesController < ApplicationController
   end
 
   def passage_params
-    params.require(:passage).permit(:title, :author, :body, :link, :user_id, :created_at, :updated_at)
+    params.require(:passage).permit(:title, :author, :body, :link, :user_id, :created_at, :updated_at, :tag_list)
   end
 
 end
