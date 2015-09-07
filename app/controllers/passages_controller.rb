@@ -22,10 +22,16 @@ class PassagesController < ApplicationController
   end
 
   def update
+    if @passage.update(passage_params) 
+      redirect_to @passage
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-
+    @passage.destroy
+    redirect_to passages_path
   end
 
   private

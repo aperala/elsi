@@ -1,10 +1,8 @@
-<% @passages.each do |passage| %>
+<% @passages.order(created_at: 'DESC').each do |passage| %>
     <h3><%= link_to passage.title, passage_path(passage) %></h3>
     <p><%= passage.body %></p>
     <h5>&mdash; <%= passage.author %></h5>
-    <p class="link-and-date">
-      <%= link_to "#{passage.link}", passage.link, target:'_blank' %>
-      <br>
+    <p class="date">
       <%= passage.created_at.to_s(:short) %>
     </p>
 <% end %>
