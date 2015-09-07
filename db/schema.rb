@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907173757) do
+ActiveRecord::Schema.define(version: 20150907183424) do
 
   create_table "passages", force: :cascade do |t|
     t.string   "title"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20150907173757) do
   end
 
   add_index "passages", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "responses", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "user_id",    null: false
+    t.integer  "passage_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
