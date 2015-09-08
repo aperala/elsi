@@ -1,2 +1,13 @@
-<h1>Elsi</h1>
-<h3>A Digital Commonplace Book</h3>
+<div class="splash-container">
+  <div class="splash">
+    <h1 class="splash-head">elsi</h1>
+    <p class="splash-subhead">
+        A Digital Commonplace Book
+    </p>
+    <p>
+      <% if !current_user %>
+        <%= link_to 'Sign up', '/signup', class: "pure-button" %>
+      <% end %>
+    </p>
+  </div>
+</div>

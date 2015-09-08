@@ -1,31 +1,35 @@
- <%= form_for @passage do |f| %>
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </p>
+<div class="pure-form pure-form-aligned">
+  <fieldset>
+    <%= form_for @passage do |f| %>
+        <div class="pure-control-group">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
 
-    <p>
-      <%= f.label :author %><br>
-      <%= f.text_field :author %>
-    </p>
-    
-    <p>
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </p>
+        <div class="pure-control-group">
+          <%= f.label :author %>
+          <%= f.text_field :author %>
+        </div>
+        
+        <div class="pure-control-group">
+          <%= f.label :body %>
+          <%= f.text_area :body %>
+        </div>
 
-    <p>
-      <%= f.label :link %>
-      <%= f.text_field :link, placeholder: "http://example.com" %>
-    </p>
-    
-    <p>
-      <%= f.label :tag_list, "Tags (separate by commas)" %>
-      <%= f.text_field :tag_list %>
-    </p>
+        <div class="pure-control-group">
+          <%= f.label :link %>
+          <%= f.text_field :link, placeholder: "http://example.com" %>
+        </div>
+        
+        <div class="pure-control-group">
+          <%= f.label :tag_list, "Tags (separate by commas)" %>
+          <%= f.text_field :tag_list %>
+        </div>
+  
+        <div class="pure-controls">
+          <%= f.submit :submit, class: "pure-button" %>
+        </div>
 
-    <p>
-      <%= f.submit :submit %>
-    </p>
-
-<% end %>
+    <% end %>
+  </fieldset>
+</div>

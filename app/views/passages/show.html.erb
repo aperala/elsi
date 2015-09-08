@@ -1,38 +1,40 @@
-<article>
-  <h1><%= @passage.title %> </h1>  
-  <h3><%= @passage.author %> </h3>
-  <p><%= @passage.body %> </p>
-  <p>
-    <%= link_to "#{@passage.link}", @passage.link, target: "_blank" %>
-    <%= @passage.created_at.to_s(:short) %>
-    Tags: <%= @passage.tag_list %>
-  </p>
-</article>
-
-<%= link_to "Edit this entry", edit_passage_path(@passage)  %>
-
-<h3>Add a response:</h3>
-
-<fieldset>
-  <%= form_for Response.new do |f| %>
-    <%= f.hidden_field :passage_id, value: @passage.id %>
-    <%= f.hidden_field :user_id, value: @current_user.id %>
-    <%= f.text_area :body %>
+<div class="content">
+  <article>
+    <h1><%= @passage.title %> </h1>  
+    <h3><%= @passage.author %> </h3>
+    <p><%= @passage.body %> </p>
     <p>
-      <%= f.submit :post %>
+      <%= link_to "#{@passage.link}", @passage.link, target: "_blank" %>
+      <%= @passage.created_at.to_s(:short) %>
+      Tags: <%= @passage.tag_list %>
     </p>
-  <% end %>
-</fieldset>
+  </article>
 
-<div class="responses">
-  <% @passage.responses.order(id: :asc).each do |response| %>
-    <p class="response">
-      <%= response.body %>
-    </p>
-    <p class="date">
-      at <%= response.created_at.to_s(:short) %></span>
-    </p>
-    <hr>
-  <% end %>
+  <%= link_to "Edit this entry", edit_passage_path(@passage)  %>
 
+  <h3>Add a response:</h3>
+
+  <fieldset>
+    <%= form_for Response.new do |f| %>
+      <%= f.hidden_field :passage_id, value: @passage.id %>
+      <%= f.hidden_field :user_id, value: @current_user.id %>
+      <%= f.text_area :body %>
+      <p>
+        <%= f.submit :post %>
+      </p>
+    <% end %>
+  </fieldset>
+
+  <div class="responses">
+    <% @passage.responses.order(id: :asc).each do |response| %>
+      <p class="response">
+        <%= response.body %>
+      </p>
+      <p class="date">
+        at <%= response.created_at.to_s(:short) %></span>
+      </p>
+      <hr>
+    <% end %>
+
+  </div>
 </div>

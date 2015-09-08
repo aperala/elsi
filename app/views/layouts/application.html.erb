@@ -2,24 +2,24 @@
 <html>
 <head>
   <title>Elsi</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <meta charset="UTF-8" />
 </head>
 <body>
-
-<div class="login-status">
-  <% if current_user %>
-    Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
-  <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-  <% end %>
-</div>
-
-<%= render 'shared/nav' %>
-
-<%= yield %>
-
+  <div id="layout">
+    <%= render 'shared/nav' %>
+    <div id="login-status">
+      <% if current_user %>
+        Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
+      <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Sign up', '/signup' %>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
 </body>
 </html>
