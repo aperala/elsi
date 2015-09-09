@@ -9,7 +9,7 @@ a:link, a:visited {
 }
 
 a:hover {
-  color: #6495ed;
+  color: DarkSeaGreen;
 }
 
 p.show-passage {
@@ -60,6 +60,16 @@ hr.style-eight:after {
 div#login-status {
   margin-right: 20px;
   text-align: right;
+}
+
+img {
+  margin: 20px auto;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .pure-img-responsive {

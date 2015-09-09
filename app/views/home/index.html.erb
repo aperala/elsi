@@ -1,13 +1,20 @@
-<div class="splash-container">
-  <div class="splash">
-    <h1 class="splash-head">elsi</h1>
-    <p class="splash-subhead">
-        A Digital Commonplace Book
-    </p>
-    <p class="pure-u-1-1">
-      <% if !current_user %>
-        <%= link_to 'Sign up', '/signup', class: "pure-button" %>
-      <% end %>
-    </p>
+<div class="content pure-u-1 pure-u-md-3-4" >
+  <div class="splash-container">
+    <div class="splash">
+      <h1 class="splash-head">elsi</h1>
+      <p class="splash-subhead">
+          A Digital Commonplace Book
+      </p>
+
+      <p class="pure-u-1-1">
+        <a href="/about" class="pure-button">
+            About
+        </a>    
+        <% if !current_user %>
+          <%= link_to 'Sign up', '/signup', class: "pure-button" %>
+        <% end %>
+      </p>
+    </div>
   </div>
+
 </div>
