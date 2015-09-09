@@ -2,17 +2,19 @@
 <html>
 <head>
   <title>Elsi</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
   <%= csrf_meta_tags %>
   <meta charset="UTF-8" />
 </head>
 <body>
-  <div id="layout">
+  <div id="layout" class="pure-g">
     <%= render 'shared/nav' %>
-    <div id="login-status">
+    <div class="pure-u-1-1" id="login-status">
       <% if current_user %>
         Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
       <% else %>

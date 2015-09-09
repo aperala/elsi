@@ -1,29 +1,39 @@
-<div class="content">
-  <article>
+<div class="content pure-u-1 pure-u-md-3-4">
+  <div class="header">
     <h1><%= @passage.title %> </h1>  
     <h3><%= @passage.author %> </h3>
+  </div>
+  <article>
     <p><%= @passage.body %> </p>
+    <hr class="style-eight">
     <p>
-      <%= link_to "#{@passage.link}", @passage.link, target: "_blank" %>
+      <%= link_to "#{@passage.link}", @passage.link, target: "_blank" %> <br>
       <%= @passage.created_at.to_s(:short) %>
-      Tags: <%= @passage.tag_list %>
     </p>
+    <div class="tags">
+      Tags: <%= @passage.tag_list %>
+    </div>
   </article>
 
   <%= link_to "Edit this entry", edit_passage_path(@passage)  %>
 
-  <h3>Add a response:</h3>
 
-  <fieldset>
-    <%= form_for Response.new do |f| %>
-      <%= f.hidden_field :passage_id, value: @passage.id %>
-      <%= f.hidden_field :user_id, value: @current_user.id %>
-      <%= f.text_area :body %>
-      <p>
-        <%= f.submit :post %>
-      </p>
-    <% end %>
-  </fieldset>
+
+  <div class="pure-form pure-form-aligned" class="pure-u-1 pure-u-sm-1-5">
+    <fieldset>
+      <h4>Add a response:</h4>
+      <%= form_for Response.new do |f| %>
+        <%= f.hidden_field :passage_id, value: @passage.id %>
+        <%= f.hidden_field :user_id, value: @current_user.id %>
+        <div class="pure-control-group" >
+          <%= f.text_area :body, class: "styled", id: "response" %>
+        </div>
+        <p>
+          <%= f.submit :post %>
+        </p>
+      <% end %>
+    </fieldset>
+  </div>
 
   <div class="responses">
     <% @passage.responses.order(id: :asc).each do |response| %>

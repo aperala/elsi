@@ -1,0 +1,70 @@
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: 'Roboto Slab', serif;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: DarkSeaGreen;
+}
+
+a:hover {
+  color: #6495ed;
+}
+
+
+body {
+  font-family: 'Roboto Slab', serif;
+  color: #585656;
+}
+
+fieldset {
+  border: none;
+}
+
+form {
+  width: 60%;
+  margin: 1em auto 0 auto;
+  text-align: center;
+}
+
+form#new_passage {
+  width: 100%;
+}
+
+/* Glyph, by Harry Roberts */
+// https://css-tricks.com/examples/hrs/
+
+hr.style-eight {
+  padding: 0;
+  border: none;
+  border-top: medium double #333;
+  border-color: Gainsboro;
+  color: Gainsboro;
+  text-align: center;
+}
+
+hr.style-eight:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+.pure-control-group {
+  text-align: left;
+}
+
+textarea.styled {
+  width: 60%;
+  height: 300px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+
+    &#response {
+      height: 200px;
+    }
+}

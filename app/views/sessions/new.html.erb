@@ -1,25 +1,24 @@
-<div class="content">
-
-  <h1>Log in</h1>
-
-  <div class="pure-form pure-form-aligned">
+<div  class="content pure-u-1">
+  <div class="header">
+    <h1>Log in</h1>
+  </div>
+  <div class="pure-form pure-form-aligned" class="pure-u-1">
     <fieldset>
-
-      <%= form_tag '/login' do %>
-        <div class="pure-control-group">
-          <%= label_tag :email %>
-          <%= text_field_tag :email %>
-        </div>
-        <div class="pure-control-group">
-          <%= label_tag :password %>
-          <%= password_field_tag :password %>
-        </div>
-        <div class="pure-controls">
-          <%= submit_tag "Submit", class: "pure-button" %>
-        </div>
-      <% end %>
-
+      <div class="pure-u-1">
+        <%= form_tag '/login' do %>
+          <div class="pure-control-group">
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
+          </div>
+          <div class="pure-control-group">
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+          </div>
+          <div class="pure-controls">
+            <%= submit_tag "Submit", class: "pure-button" %>
+          </div>
+        <% end %>
+      </div>
     </fieldset>
   </div>
-  
 </div>

@@ -1,7 +1,8 @@
-<fieldset>
-  <h1 class="form-header">Edit this entry</h1>
+<div class="content pure-u-1 pure-u-md-3-4">
+  <div class="header">
+    <h1>Edit this entry</h1>
+  </div>
+      <%= render 'form' %>
+    <%= link_to "Delete this entry", passage_path(@passage), method: :delete %>
 
-  <%= render 'form' %>
-
-  <%= link_to "Delete", passage_path(@passage), method: :delete %>
-</fieldset>
+</div>
