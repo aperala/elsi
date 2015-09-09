@@ -17,7 +17,7 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
  */
 
 .pure {
-    font-family: sans-serif;
+    font-family: 'Roboto Slab', serif;    
     /* 1 */
     -ms-text-size-adjust: 100%;
     /* 2 */
