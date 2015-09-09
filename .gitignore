@@ -15,7 +15,6 @@
 .DS_Store
 
 .Gemfile.lock
-/config/secrets.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
