@@ -5,13 +5,19 @@
 
 
 #tag_cloud {
-  width: 400px;
+  width: 240px;
+  float: right;
+  margin-left: 1em;
   line-height: 1.6em;
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
 
-    a:visited, a:link {
+    a:link {
+      color: LightSlateGray;
+    }
+
+    a:visited {
       text-decoration: none;
       color: DarkSeaGreen;
     }
@@ -19,4 +25,11 @@
     a:hover {
       color: #6495ed;
     }
+}
+
+div#passage-grid {
+  margin-right: 40px;
+  margin-bottom: 20px;
+  padding: 0 7px;
+  border: 1px solid #dcdcdc;
 }
