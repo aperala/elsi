@@ -7,7 +7,9 @@
     <p class="show-passage"><%= simple_format h (@passage.body) %> </p>
     <hr class="style-eight">
     <p>
-      <%= link_to "Link", @passage.link, target: "_blank" %> <br>
+      <% if @passage.link? %>
+        <%= link_to "Link", @passage.link, target: "_blank" %> <br>
+      <% end %>
       <%= @passage.created_at.to_s(:short) %>
     </p>
     <div class="tags">
