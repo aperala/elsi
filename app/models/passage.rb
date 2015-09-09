@@ -7,4 +7,9 @@ class Passage < ActiveRecord::Base
  has_many :responses, dependent: :destroy
  
  acts_as_taggable
+
+  def self.search(query)
+    where("title LIKE ? OR author LIKE ?", "%#{query}%", "%#{query}%") 
+  end
+
 end

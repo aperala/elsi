@@ -4,10 +4,10 @@
     <h3><%= @passage.author %> </h3>
   </div>
   <article>
-    <p><%= @passage.body %> </p>
+    <p class="show-passage"><%= simple_format h (@passage.body) %> </p>
     <hr class="style-eight">
     <p>
-      <%= link_to "#{@passage.link}", @passage.link, target: "_blank" %> <br>
+      <%= link_to "Link", @passage.link, target: "_blank" %> <br>
       <%= @passage.created_at.to_s(:short) %>
     </p>
     <div class="tags">

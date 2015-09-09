@@ -5,8 +5,10 @@ class PassagesController < ApplicationController
   def index
     if params[:tag]
       @passages = @current_user.passages.tagged_with(params[:tag])
+    elsif params[:search]
+      @passages = Passage.search(params[:search]).order("created_at DESC")
     else
-      @passages = @current_user.passages.all
+      @passages = @current_user.passages.all.order('created_at DESC')
     end
   end
 

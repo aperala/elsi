@@ -5,13 +5,16 @@ html, button, input, select, textarea,
 
 a:link, a:visited {
   text-decoration: none;
-  color: DarkSeaGreen;
+  color: #B378D3;
 }
 
 a:hover {
   color: #6495ed;
 }
 
+p.show-passage {
+  margin-bottom: 40px;
+}
 
 body {
   font-family: 'Roboto Slab', serif;
@@ -54,17 +57,43 @@ hr.style-eight:after {
   background: white;
 }
 
+div#login-status {
+  margin-right: 20px;
+  text-align: right;
+}
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-form {
+  width: 98%;
+  text-align: right;
+  margin-top: 20px;
+}
+
 .pure-control-group {
   text-align: left;
+}
+
+#search-button {
+  height: 28px;
+
+    i {
+      vertical-align: text-top;
+      color: #7D5494;
+    }
 }
 
 textarea.styled {
   width: 60%;
   height: 300px;
-  border: 3px solid #cccccc;
   padding: 5px;
+  overflow: scroll;
+  border: 3px solid #cccccc;
 
     &#response {
-      height: 200px;
+      height: 150px;
     }
 }
