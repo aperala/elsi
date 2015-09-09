@@ -7,9 +7,8 @@
       </p>
 
       <p class="pure-u-1-1">
-        <a href="/about" class="pure-button">
-            About
-        </a>    
+        <%= link_to "About", about_path, class: "pure-button"  %>
+   
         <% if !current_user %>
           <%= link_to 'Sign up', '/signup', class: "pure-button" %>
         <% end %>
