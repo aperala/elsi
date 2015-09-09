@@ -15,6 +15,10 @@
  */
  @import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
 
-body {
+html {
+  font-family: 'Roboto Slab', serif; 
+}
+
+.pure-g [class*="pure-u"] {
   font-family: 'Roboto Slab', serif; 
 }
