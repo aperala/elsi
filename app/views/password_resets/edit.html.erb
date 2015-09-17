@@ -1,10 +1,12 @@
 <div class="content pure-u-1" >
+  <div class="header">
+   <h1>Reset Your Password</h1>
+ </div>
   <div class="pure-form pure-form-aligned" class="pure-u-1">
     <fieldset>
-      <div class="pure-u-1">
         <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
           <% if @user.errors.any? %>
-              <div class="error_messages">
+              <div class="pure-u-1">
                 <h2>Form is invalid</h2>
                 <ul>
                   <% for message in @user.errors.full_messages %>
@@ -13,6 +15,7 @@
                 </ul>
               </div>
             <% end %>
+        <div class="pure-u-1">
           <div class="pure-control-group">
             <%= f.label :password %>
             <%= f.password_field :password %>
