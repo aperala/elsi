@@ -1,0 +1,29 @@
+<div class="content pure-u-1" >
+  <div class="pure-form pure-form-aligned" class="pure-u-1">
+    <fieldset>
+      <div class="pure-u-1">
+        <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+          <% if @user.errors.any? %>
+              <div class="error_messages">
+                <h2>Form is invalid</h2>
+                <ul>
+                  <% for message in @user.errors.full_messages %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+          <div class="pure-control-group">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+          </div>
+          <div class="pure-control-group">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation %>
+          </div>
+          <div class="pure-controls"><%= f.submit "Update Password" %></div>
+        <% end %>
+      </div>
+    </fieldset>
+  </div>
+</div>
