@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/', notice: "You have signed up successfully."
     else
-      flash[:error] = "An error has occurred; please try again."
+      flash[:notice] = "An error has occurred; please try again."
       render 'new'
     end
   end
