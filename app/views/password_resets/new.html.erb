@@ -1,0 +1,14 @@
+<div  class="content pure-u-1">
+  <div class="header">
+    <h1>Reset Password</h1>
+  </div>
+  <div class="pure-form pure-form-aligned" class="pure-u-1">
+    <%= form_tag password_resets_path, method: :post do %>
+      <div class="pure-control-group">
+        <%= label_tag :email %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div class="pure-controls"><%= submit_tag "Reset Password" %></div>
+    <% end %>
+  </div>
+</div>

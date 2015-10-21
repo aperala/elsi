@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/', notice: "You have signed up successfully."
     else
-      flash[:error] = "An error has occurred; please try again."
+      flash[:notice] = "An error has occurred; please try again."
       render 'new'
     end
   end
@@ -18,6 +18,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :auth_token, :email, :password, :password_confirmation)
   end
 end

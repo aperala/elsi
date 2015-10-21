@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
 
     get '/signup' => 'users#new'
     post '/users' => 'users#create'
+
+    get '/about' => 'home#about'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -23,7 +26,7 @@ Rails.application.routes.draw do
 
     resources :passages
     resources :responses
-    
+    resources :password_resets
   # Example resource route with options:
   #   resources :products do
   #     member do
